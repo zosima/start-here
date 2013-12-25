@@ -17,6 +17,9 @@
   * Get State
   * Set Saved State
 
+- Trigger
+  * Trigger Fired
+
 ### What we've got
 
 1. Philips Hue lights
