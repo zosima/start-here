@@ -27,3 +27,32 @@
 1. Belkin Wemo Power Switch
 1. Harmony Remote
 1. BLE Proximity Detection?
+
+### Moving Parts
+
+* An Android app
+  - Polls various devices that are on the local network (lights, sensors,
+    switches)
+  - Recieves various push notifications that tell us to do stuff on the local
+    network
+
+* An Azure Mobile Services backend
+  - Handles push notification tokens and sends pushes
+  - Allows the Android app to add items to the event table
+  - Allows the website to ask the Android app to capture a state and notify
+    when it completes
+
+* A mobile / website (WAWS)
+  - UI for starting scenes yourself (mobile)
+  - UI for saving scenes (desktop)
+  - UI for auto-starting scenes based on triggers (desktop)
+
+### To complete scenario one, we need
+
+1. An Android app logs into the website, registers for push notifications
+1. On the app, we have a page to set up the Philips Hue and do the UDP dance
+1. The app registers the new Devices that it finds with AMS
+1. On the website, we capture a state then create a Scene
+1. On the mobile website, the user asks to move into a Scene, we ping the
+   Mobile site which pushes the state data to the Android app.
+1. The Android app applies the state
